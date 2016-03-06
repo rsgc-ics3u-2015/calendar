@@ -48,10 +48,28 @@ for row in 1...6 {
             
             print("   ", terminator: "")
             
+        } else if currentPositionInCalendar >= startDay {
+            
+            // Print a day in the calendar
+            if currentDayInMonth < 10 {
+                
+                // Two spaces
+                print("  ", terminator: "")
+                
+                // Then day
+                print("\(currentDayInMonth)", terminator: "")
+                
+                // Go to next day in month
+                currentDayInMonth += 1
+            }
+            
         }
         
-        // Always print a space between columns (for now use an underscore for clarity)
-        print("_", terminator: "")
+        // Print a space between columns (for now use an underscore for clarity)
+        if column < 7 {
+            print("_", terminator: "")
+        }
+        
         
         // Increment current position in calendar
         currentPositionInCalendar += 1
