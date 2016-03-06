@@ -15,7 +15,8 @@ repeat {
     
     // Get input from the user
     print("Enter day:")
-    // Must unwrap the optional String returned by readLine
+    
+    // Must safely unwrap the optional String returned by readLine
     if let input = readLine(stripNewline: true) {
         
         // We must have non-nil input at this point
@@ -36,3 +37,35 @@ repeat {
     }
 
 } while startDay == 0
+
+
+var daysInMonth : Int = 0 // Purposely set this to an invalid value
+
+// Loop until we get the input we need
+repeat {
+    
+    // Get input from the user
+    print("Enter the number of days in the month:")
+    
+    // Must safely unwrap the optional String returned by readLine
+    if let input = readLine(stripNewline: true) {
+        
+        // We must have non-nil input at this point
+        // Try to convert it to an integer
+        if let inputAsInteger = Int(input) {
+            
+            // At this point, we have integer input
+            // Check if it is in range that we need
+            if inputAsInteger >= 28 && inputAsInteger <= 31 {
+                
+                // We finally have input we need, assign it to the 'good' variable we'll use later
+                daysInMonth = inputAsInteger
+                
+            }
+            
+        }
+        
+    }
+    
+} while daysInMonth == 0
+
