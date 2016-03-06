@@ -26,7 +26,7 @@
 // Input variables
 let startDay : Int = 7
 let daysInMonth : Int = 31
-let specialDay : Int = 2
+let specialDay : Int = 12
 
 // Other variables
 var currentPositionInCalendar : Int = 1
@@ -53,13 +53,23 @@ for row in 1...6 {
             // Print a day in the calendar
             if currentDayInMonth < 10 {
                 
-                // Two spaces to pad a single-digit day
-                print("  ", terminator: "")
+                // Check if this is the special day
+                if currentDayInMonth == specialDay {
+                    print(" *", terminator: "")
+                } else {
+                    // Two spaces to pad a single-digit day
+                    print("  ", terminator: "")
+                }
                 
             } else {
                 
-                // One space to pad a two-digit day
-                print(" ", terminator: "")
+                // Check if this is the special day
+                if currentDayInMonth == specialDay {
+                    print("*", terminator: "")
+                } else {
+                    // One space to pad a two-digit day
+                    print(" ", terminator: "")
+                }
                 
             }
             
@@ -68,7 +78,7 @@ for row in 1...6 {
             
             // Go to next day in month
             currentDayInMonth += 1
-
+            
         }
         
         // Print a space between columns (for now use an underscore for clarity)
