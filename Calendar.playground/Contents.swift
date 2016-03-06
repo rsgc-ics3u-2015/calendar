@@ -83,7 +83,7 @@ for row in 1...6 {
         
         // Print a space between columns (for now use an underscore for clarity)
         if column < 7 {
-            print("_", terminator: "")
+            print(" ", terminator: "")
         }
         
         
