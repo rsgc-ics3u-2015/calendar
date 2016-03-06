@@ -53,16 +53,22 @@ for row in 1...6 {
             // Print a day in the calendar
             if currentDayInMonth < 10 {
                 
-                // Two spaces
+                // Two spaces to pad a single-digit day
                 print("  ", terminator: "")
                 
-                // Then day
-                print("\(currentDayInMonth)", terminator: "")
+            } else {
                 
-                // Go to next day in month
-                currentDayInMonth += 1
+                // One space to pad a two-digit day
+                print(" ", terminator: "")
+                
             }
             
+            // Then print day
+            print("\(currentDayInMonth)", terminator: "")
+            
+            // Go to next day in month
+            currentDayInMonth += 1
+
         }
         
         // Print a space between columns (for now use an underscore for clarity)
