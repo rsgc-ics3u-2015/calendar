@@ -69,3 +69,33 @@ repeat {
     
 } while daysInMonth == 0
 
+
+var specialDay : Int = 0 // Purposely set this to an invalid value
+
+// Loop until we get the input we need
+repeat {
+    
+    // Get input from the user
+    print("Enter the special day:")
+    
+    // Must safely unwrap the optional String returned by readLine
+    if let input = readLine(stripNewline: true) {
+        
+        // We must have non-nil input at this point
+        // Try to convert it to an integer
+        if let inputAsInteger = Int(input) {
+            
+            // At this point, we have integer input
+            // Check if it is in range that we need
+            if inputAsInteger >= 1 && inputAsInteger <= daysInMonth {
+                
+                // We finally have input we need, assign it to the 'good' variable we'll use later
+                specialDay = inputAsInteger
+                
+            }
+            
+        }
+        
+    }
+    
+} while specialDay == 0
