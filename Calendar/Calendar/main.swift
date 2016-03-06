@@ -99,3 +99,72 @@ repeat {
     }
     
 } while specialDay == 0
+
+// Other variables
+var currentPositionInCalendar : Int = 1
+var currentDayInMonth : Int = 1
+
+// Process and output
+
+// Print out the header
+print("")
+print("Sun Mon Tue Wed Thr Fri Sat")
+
+// Generate output
+for row in 1...6 {
+    
+    // Go across the columns for this row
+    for column in 1...7 {
+        
+        // When less than the start day, print three blank spaces
+        if currentPositionInCalendar < startDay {
+            
+            print("   ", terminator: "")
+            
+        } else if currentPositionInCalendar >= startDay && currentDayInMonth <= daysInMonth {
+            
+            // Print a day in the calendar
+            if currentDayInMonth < 10 {
+                
+                // Check if this is the special day
+                if currentDayInMonth == specialDay {
+                    print(" *", terminator: "")
+                } else {
+                    // Two spaces to pad a single-digit day
+                    print("  ", terminator: "")
+                }
+                
+            } else {
+                
+                // Check if this is the special day
+                if currentDayInMonth == specialDay {
+                    print("*", terminator: "")
+                } else {
+                    // One space to pad a two-digit day
+                    print(" ", terminator: "")
+                }
+                
+            }
+            
+            // Then print day
+            print("\(currentDayInMonth)", terminator: "")
+            
+            // Go to next day in month
+            currentDayInMonth += 1
+            
+        }
+        
+        // Print a space between columns (for now use an underscore for clarity)
+        if column < 7 {
+            print(" ", terminator: "")
+        }
+        
+        
+        // Increment current position in calendar
+        currentPositionInCalendar += 1
+    }
+    
+    // Move down to the next row
+    print("")
+    
+}
