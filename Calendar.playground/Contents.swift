@@ -48,7 +48,7 @@ for row in 1...6 {
             
             print("   ", terminator: "")
             
-        } else if currentPositionInCalendar >= startDay {
+        } else if currentPositionInCalendar >= startDay && currentDayInMonth <= daysInMonth {
             
             // Print a day in the calendar
             if currentDayInMonth < 10 {
